@@ -7,5 +7,11 @@ img = cv2.imread("dickens-lin-FLSbAX8dheQ-unsplash.jpg", 0)
 
 # Display the image
 cv2.imshow("Image", img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+k = cv2.waitKey(0)
+
+if k == 27:
+    cv2.destroyAllWindows()
+elif k == ord("s"):
+    # Write (save the image)
+    cv2.imwrite("street.jpg", img)
+    cv2.destroyAllWindows()
