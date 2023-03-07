@@ -1,4 +1,5 @@
 import cv2
+import datetime
 
 # Read the image
 img = cv2.imread("dickens-lin-FLSbAX8dheQ-unsplash.jpg", 1)
@@ -25,6 +26,10 @@ img = cv2.circle(img, (590, 110), 110, (0, 0, 120), -1)
 # Add text
 font = cv2.FONT_HERSHEY_SIMPLEX
 img = cv2.putText(img, "Cars Day Out", (10, 500), font, 3, (0,210,210), 8)
+
+# Show date
+date = str(datetime.datetime.now())
+frame = cv2.putText(img, date, (10, 40), font, 1, (40,20,231), 2)
 
 # Show the image
 cv2.imshow("Image", img)
