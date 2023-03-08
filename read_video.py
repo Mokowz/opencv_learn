@@ -8,7 +8,7 @@ cap = cv2.VideoCapture(0)
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
 
 # Output variable (video writer object)
-# out = cv2.VideoWriter("moii.mp4", fourcc, 30, (640, 480))
+out = cv2.VideoWriter("moii.mp4", fourcc, 30, (640, 480))
 
 # Capture the frames
 while(True):
@@ -17,7 +17,7 @@ while(True):
     if ret == True:
 
         # write the video
-        # out.write(frame)
+        out.write(frame)
 
         font = cv2.FONT_HERSHEY_SCRIPT_SIMPLEX
         # text = "Width: "+ str(cap.get(3)) + " Height: " + str(cap.get(4))
@@ -37,5 +37,5 @@ while(True):
 
 # Release everything
 cap.release()
-# out.release()
+out.release()
 cv2.destroyAllWindows()
